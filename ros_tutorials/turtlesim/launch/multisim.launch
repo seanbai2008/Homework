@@ -1,0 +1,10 @@
+<launch>
+	<group ns="turtlesim1">
+	       <param name="T" value="10" />
+	       <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+	       <node pkg="rosbag" name="record" type="record" args="-O $(find assignment1)/src/path.bag -l 1000 /turtlesim1/turtle1/cmd_vel"/>
+	</group>
+	<group ns="turtlesim2">
+	       <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+	</group>
+</launch>
